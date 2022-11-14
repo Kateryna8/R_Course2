@@ -36,7 +36,14 @@ download.file(url="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hi
 
 data2=read.csv(file)
 head(data2)
+
+sum(data2$VAL == 24, na.rm = TRUE)
 ```
+
+Результат:
+___
+[1] 53
+___
 
 
 **3.Зчитайте xml файл за посиланням http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml Скільки ресторанів мають zipcode 21231?**
