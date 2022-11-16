@@ -16,7 +16,7 @@ install.packages("BiocManager")
 BiocManager::install("rhdf5")
 library(rhdf5)
 
-h5ls("data.hdf5")
+h5ls("data_lab2.hdf5")
 ```
 Результат:
 ```
@@ -46,7 +46,7 @@ h5ls("data.hdf5")
 **4. Зчитайте результати вимірів. Для цього зчитайте name Strain з групи strain
 в змінну strain.**
 ```
-strain <- h5read("data", "strain/Strain")
+strain <- h5read("data_lab2", "strain/Strain")
 H5close()
 ```
 Результат:
