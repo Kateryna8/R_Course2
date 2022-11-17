@@ -82,7 +82,25 @@ df
 **4. Ім’я автору (Name), кількість статей по кожному автору (NumPapers). 
 Сортування по кількості статей від більшої кількості до меньшої.**
 ```
+task4 <- dbSendQuery(conn, "select t2.Name, count(t1.Title) as NumPapers
+                              from Papers t1
+                        inner join PaperAuthors t3 ON t1.Id=t3.PaperId 
+                        inner join Authors t2 ON t3.AuthorId=t2.Id 
+                          group by t2.Name
+                          order by NumPapers desc") 
+df <- dbFetch(task4, n=10)
+df
 
 Результат:
-
+                   Name NumPapers
+1  Pradeep K. Ravikumar         7
+2        Lawrence Carin         6
+3               Han Liu         6
+4     Zoubin Ghahramani         5
+5               Le Song         5
+6   Inderjit S. Dhillon         5
+7          Zhaoran Wang         4
+8         Yoshua Bengio         4
+9  Simon Lacoste-Julien         4
+10          Shie Mannor         4
 ```
