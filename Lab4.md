@@ -61,10 +61,28 @@ df
 **3. Вибрати всі назви статей (Title), в яких є слово «statistical». Сортування по 
 назві статті.**
 ```
+task3 <- dbSendQuery(conn, "select title
+                              from papers
+                             where title like '%statistical%'
+                          order by title")
+df <- dbFetch(task3, n=10)
+df
+
 Результат:
+                                                                                 Title
+1 Adaptive Primal-Dual Splitting Methods for Statistical Learning and Image Processing
+2                                Evaluating the statistical significance of biclusters
+3                  Fast Randomized Kernel Ridge Regression with Statistical Guarantees
+4     High Dimensional EM Algorithm: Statistical Optimization and Asymptotic Normality
+5                Non-convex Statistical Optimization for Sparse Tensor Graphical Model
+6            Regularized EM Algorithms: A Unified Framework and Statistical Guarantees
+7                            Statistical Model Criticism using Kernel Two Sample Tests
+8                         Statistical Topological Data Analysis - A Kernel Perspective
 ```
 **4. Ім’я автору (Name), кількість статей по кожному автору (NumPapers). 
 Сортування по кількості статей від більшої кількості до меньшої.**
 ```
+
 Результат:
+
 ```
