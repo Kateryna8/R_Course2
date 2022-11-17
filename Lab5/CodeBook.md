@@ -19,7 +19,7 @@ subject.test <- read.table("UCI HAR Dataset/test/subject_test.txt", col.names = 
 
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c('n','text'))
 ```
-Створення одного набору даних з унікальними значеннями, шляхом об'єднання навчального та тестового наборів
+Створення одного набору даних з унікальними значеннями, шляхом об'єднання навчального та тестового наборів:
 ```
 data_lab5 <- cbind(rbind(X_train, X_test),
                    rbind(y_train, Y_test), 
