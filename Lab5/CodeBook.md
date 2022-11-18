@@ -35,3 +35,15 @@ install.packages("dplyr")
 library(dplyr)
 two_param <- select(all_data,  matches("mean\\(\\)|std\\(\\)|subject|activity"))
 ```
+Присвоєння описових імен змінним у наборі даних:
+```
+descr_name <- aggregate(x = descr[, -c(67,68)], 
+                     by = list(descr[,'subject'], descr[, 'activity']),
+                     FUN = mean)
+```
+Створення набору даних (tidy dataset) із середнім значенням для кожної змінної для кожної 
+діяльності та кожного суб’єкту (subject)
+```
+write.csv(descr_name, "tidy_dataset.csv", row.names=F)
+setwd("/Users/Rudolf/Documents")
+```
