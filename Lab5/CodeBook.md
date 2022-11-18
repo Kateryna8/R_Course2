@@ -45,5 +45,5 @@ descr_name <- aggregate(x = descr[, -c(67,68)],
 діяльності та кожного суб’єкту (subject)
 ```
 write.csv(descr_name, "tidy_dataset.csv", row.names=F)
-setwd("/Users/Rudolf/Documents")
+setwd("/Users/Rudolf/Documents") 
 ```
